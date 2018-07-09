@@ -1,7 +1,7 @@
 {
-  "name": "ags-component-http-request",
-  "version": "1.0.0-dev",
-  "description": "Component of AGS frameworkt which provides a library to send HTTP request in an AutoIt project.",
+  "name": "@autoit-gui-skeleton/ags-component-http-request",
+  "version": "1.0.0",
+  "description": "AGS components are a set of AutoIt libraries, that you can use in your AutoIt project build with the [AGS framework](https://v20100v.github.io/autoit-gui-skeleton/). AGS-component-http-request is a library used to send HTTP request in POST or GET method in an AutoIt project build with AGS framework.",
   "AGS": {
     "framework": {
       "version": "1.0.0"
@@ -27,11 +27,5 @@
   "repository": {
     "url": "https://github.com/v20100v/ags-component-http-request.git",
     "type": "git"
-  },
-  "files": [
-    ".yarnrc",
-    "ags-component-http-request.au3",
-    "package.json",
-    "README.md"
-  ]
+  }
 }

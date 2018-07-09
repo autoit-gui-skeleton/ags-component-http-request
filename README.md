@@ -27,17 +27,17 @@ This library provides few method to handle HTTP request.
 #### Make a simple HTTP request in GET
 
 ```autoit
-#include 'vendor/ags-component-http-request/ags-component-http-request.au3'
+Local $response = HttpGET("https://soundcloud.com/2080/my-megadrive")
+    
+ConsoleWrite($response.Status & @CRLF)
+ConsoleWrite($response.ResponseText)
+```
 
-;=====================================================================================
-; Func HttpGET($url, $data = "", $proxy = "")
-; @param $url (string)    : URL want to open
-; @param $data (string)   : Data to be posted by GET method (?param1=23&param2=ibicf)
-; @param $proxy (string)  : Specify a proxy. By default we load proxy settings form 
-;                           configuration file - ./config/parameters.ini
-; @return $oHttp (object) : Instance of the Winhttprequest.5.1 object
-;=====================================================================================
+#### Make a request with a given proxy
 
+By default this component search in the configuration file `./config/parameters.ini` if a proxy is defined in the `PROXY` variable of the section `AGS_HTTP_REQUEST`. But you can also provide a proxy directly in the method.
+
+```autoit
 Local $response = HttpGET( _ 
     "https://soundcloud.com/2080/my-megadrive", _ 
     default, _ 
@@ -63,10 +63,30 @@ In order to install `Node.js` and `Yarn` just run your prefered windows command 
 λ choco install yarn
 ```
 
-And to install `AGS-component-http-request`, just type in the root folder of your project ; i.e. where the `package.json` of your project is store.
+### Install
+
+To install `AGS-component-http-request`, just type this instruction in the root folder of your project ; i.e. where the `package.json` of your project is store
 
 ```
-λ yarn install ags-component-http-request
+λ  yarn add @autoit-gui-skeleton/ags-component-http-request --modules-folder web/vendor
+```
+
+By default yarn or npm installs packages into the `node_modules` directory in the root of the project. With an AGS project, we want to install packages into `./vendor/` directory. To do this we add the option `--modules-folder vendor`. Normaly, you are supposed to have the file `./.yarnrc` in the root folder of your project, in the same directory as your `package.json` file. Yarn automatically looks in this file for additional configuration options. We add into it, this configuration :
+ 
+```
+# ./.yarnrc
+--modules-folder vendor
+```
+ 
+Now just run `yarn add @autoit-gui-skeleton/ags-component-http-request` to install it into `./vendor` directory.
+
+
+### Configure in AGS project
+
+In the main entry program of your project, you need to include this library.
+
+```autoit
+#include 'vendor/@autoit-gui-skeleton/ags-component-http-request/ags-component-http-request.au3'
 ```
 
     
