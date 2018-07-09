@@ -25,7 +25,7 @@
   ],
   "homepage": "https://v20100v.github.io/autoit-gui-skeleton/",
   "repository": {
-    "url": "https://github.com/v20100v/ags-component-http-request.git",
+    "url": "https://github.com/autoit-gui-skeleton/ags-component-http-request.git",
     "type": "git"
   }
 }
