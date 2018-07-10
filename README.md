@@ -1,10 +1,46 @@
 AGS-component-http-request
 ==========================
 
-> AGS components are a set of AutoIt libraries, that you can use in your AutoIt project build with the [AGS framework](https://v20100v.github.io/autoit-gui-skeleton/). AGS-component-http-request is a library used to send HTTP request in POST or GET method in an AutoIt project build with AGS framework.
+> AGS components are a set of AutoIt libraries, that you can use in your AutoIt project built with the [AGS framework](https://v20100v.github.io/autoit-gui-skeleton/). AGS-component-http-request is a library used to send HTTP request in POST or GET method in an AutoIt project build with AGS framework.
+
 
 
 <br/>
+
+## Install
+
+We assume that you have already install [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/lang/en/), for example with [Chocolatey](https://chocolatey.org/). We recommend you to install it with Yarn. To do this, just type in the root folder of your project where the `package.json` is saved :
+
+```
+λ  yarn add @autoit-gui-skeleton/ags-component-http-request --modules-folder web/vendor
+```
+
+This package is installed into the `./vendor` directory. To use it in your AutoIt program, you need to include this library with this instruction:
+
+```autoit
+#include 'vendor/@autoit-gui-skeleton/ags-component-http-request/ags-component-http-request.au3'
+```
+
+
+
+<br/>
+
+## AGS's vendor directory
+
+By default Yarn and npm installs packages into the `./node_modules` directory. With an AGS project we want to install this kind of dependency package into the `./vendor/` directory, in order to avoid any confusion with a Node.js project. To do this we add the option `--modules-folder vendor`. 
+
+You can omit this option normaly with an AGS project. Indeed, you are supposed to have the file `./.yarnrc` in the root folder of your AGS project, in the same place of your `pacakge.json` file. Yarn automatically looks into the `./.yarnrc` file for additional configuration options.
+
+```
+#./.yarnrc 
+--modules-folder vendor
+```
+
+With this file, you can run `yarn add @autoit-gui-skeleton/ags-wrapper-json` to install it directly into the appropriate `./vendor` directory.
+
+
+
+<br/> 
 
 ## Description
 
@@ -46,60 +82,16 @@ Local $response = HttpGET( _
 ConsoleWrite($response.Status & @CRLF)
 ConsoleWrite($response.ResponseText)
 ```
+
+
+### Dependencies
+   
+ > Specifiy if this AGS component have dependencies with an third-party library AutoIt or with an anoter AGS component.
  
-
-<br/>
-
-## Configure and install it
-
-### Requirements 
-
-To install this AGS component, we use [Yarn](https://yarnpkg.com/en/docs/install#windows-stable) as a package manager for AutoIt code of AGS framework. We divert the orignal use of Yarn, a tool in Node.js ecosystm use to handle Javascript module. We assume that you already install `Node.js` and `Yarn`, and if it's not the case, we suggest you to take a [chocolatey](https://chocolatey.org/), in ordre to install them. Chocolatey is THE package manager for Windows. It easily manage all aspects of Windows software (installation, configuration, upgrade, and uninstallation). 
-
-In order to install `Node.js` and `Yarn` just run your prefered windows command ; cmd, cmder or powershell ; as an administrator and type:
-
-```bash
-λ choco install nodejs
-λ choco install yarn
-```
-
-### Install
-
-To install `AGS-component-http-request`, just type this instruction in the root folder of your project ; i.e. where the `package.json` of your project is store
-
-```
-λ  yarn add @autoit-gui-skeleton/ags-component-http-request --modules-folder web/vendor
-```
-
-By default yarn or npm installs packages into the `node_modules` directory in the root of the project. With an AGS project, we want to install packages into `./vendor/` directory. To do this we add the option `--modules-folder vendor`. Normaly, you are supposed to have the file `./.yarnrc` in the root folder of your project, in the same directory as your `package.json` file. Yarn automatically looks in this file for additional configuration options. We add into it, this configuration :
- 
-```
-# ./.yarnrc
---modules-folder vendor
-```
- 
-Now just run `yarn add @autoit-gui-skeleton/ags-component-http-request` to install it into `./vendor` directory.
+ AGS-component-http-request use Winhttprequest.5.1 object. It has no dependence with another AutoIt library or AGS component.
+   
 
 
-### Configure in AGS project
-
-In the main entry program of your project, you need to include this library.
-
-```autoit
-#include 'vendor/@autoit-gui-skeleton/ags-component-http-request/ags-component-http-request.au3'
-```
-
-    
-<br/>
- 
-## Dependencies
-  
-> Specifiy if this AGS component have dependencies with an third-party library AutoIt or with an anoter AGS component. 
-  
- - AutoIt library dependencies : none.
- - AGS-components dependencies : none.
-  
- 
 <br/>
  
 ## About
