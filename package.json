@@ -2,30 +2,37 @@
   "name": "@autoit-gui-skeleton/ags-component-http-request",
   "version": "1.0.2",
   "description": "AGS components are a set of AutoIt libraries, that you can use in your AutoIt project build with the [AGS framework](https://v20100v.github.io/autoit-gui-skeleton/). AGS-component-http-request is a library used to send HTTP request in POST or GET method in an AutoIt project build with AGS framework.",
+  "author": "20100 <vb20100bv@gmail.com> (https://github.com/v20100v)",
+  "contributors": [
+    "v20100v <vb20100bv@gmail.com> (https://github.com/v20100v)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "AGS",
+    "AutoIt",
+    "AutoIt-GUI-Skeleton",
+    "AGS-component",
+    "http",
+    "proxy"
+  ],
+  "homepage": "https://autoit-gui-skeleton.github.io/",
+  "repository": {
+    "url": "https://github.com/autoit-gui-skeleton/ags-component-http-request.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/autoit-gui-skeleton/ags-component-http-request/issues"
+  },
+  "dependencies": {},
   "AGS": {
     "framework": {
       "version": "1.0.0"
     },
     "AutoIt": {
       "version": "3.3.14.5"
+    },
+    "component": {
+      "main": "ags-component-http-request.au3"
     }
-  },
-  "author": "20100 <vb20100bv@gmail.com> (https://github.com/v20100v)",
-  "license": "MIT",
-  "keywords": [
-    "AGS",
-    "AutoIt",
-    "AutoItGUISkeleton",
-    "AutoIt GUI Skeleton",
-    "au3",
-    "http",
-    "get",
-    "post",
-    "proxy"
-  ],
-  "homepage": "https://v20100v.github.io/autoit-gui-skeleton/",
-  "repository": {
-    "url": "https://github.com/autoit-gui-skeleton/ags-component-http-request.git",
-    "type": "git"
   }
 }
